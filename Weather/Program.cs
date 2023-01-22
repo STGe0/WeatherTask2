@@ -20,7 +20,7 @@ if (response.IsSuccessStatusCode)
     var model = JsonConvert.DeserializeObject<WeatherJson>(result);
     Console.WriteLine($"Прогноз погоды на {DateTime.Now} для города {model.name}:");
     Console.WriteLine($"Текущая температура {model.main.temp}°, {model.weather[0].description}, ощущается как {model.main.feels_like}°");
-    Console.WriteLine($"Скорость ветра {model.wind.speed} м/с, {WeatherDegToString(model.wind.deg)} влажность {model.main.humidity}%, давление {model.main.pressure} мм рт. ст.");
+    Console.WriteLine($"Скорость ветра {model.wind.speed} м/с, {WeatherDegToString(model.wind.deg)}, влажность {model.main.humidity}%, давление {model.main.pressure} мм рт. ст.");
 }
 else
 {
